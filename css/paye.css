@@ -1,0 +1,24 @@
+body{
+    background-color: #121414;
+    font-family: 'Special Elite', cursive;
+    color: antiquewhite;
+}
+h1{
+    color: goldenrod;   
+    text-align: center;
+    margin-top: 5%;
+}
+hr{
+    margin-left: 45%;
+    margin-right: 45%;
+}
+form{
+    padding-top: 20px;
+    margin:0 30%;
+}
+input{
+    margin-bottom: 40px;
+}
+textarea{
+    margin-bottom: 40px;
+}

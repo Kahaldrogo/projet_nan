@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CHICKENHOME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/paye.css">
+    <script src="main.js"></script>
+</head>
+<body>
+ <h1>Confirmation de Paiement</h1>
+<HR>
+<FORM NAME="formu" METHOD="post" ENCTYPE="text/plain" >
+   Nom et Prenom :
+   <input type="text" name="name" id="">
+   <br>
+Telephone :
+<input type="tel" required name="tel">
+<br>
+    Lieu de livraison :<input type="text" required name="lieu">
+    <BR>
+        Votre adresse e-mail : <INPUT TYPE="text" NAME="adr" WIDTH="20" required>
+    
+    <BR>
+        <INPUT TYPE="reset" VALUE="Retour" >
+    <INPUT TYPE="submit" VALUE="Envoyer" onclick="valider()">
+</FORM>
+
+    <script>
+        function envoi() {
+                // par défaut, pas d'envoi
+                document.formu.action = "";
+                // recherche de @ dans l'adresse
+                var address = window.document.formu.adr.value;
+                var pos = address.indexOf("@");
+                if (address == "") {
+                    alert("Vous devez donner une adresse e-mail.");
+                }
+                else {
+                    if (pos == -1 || pos == 0 || pos == address.length - 1) {
+                        alert("Une adresse e-mail a le format nom@domaine");
+                    }
+                    else // tout va bien, on envoie le formulaire
+                        document.formu.action = 'mailto:kahaldrogo12@gmail.com?subject="Commande"';
+                }
+            }
+        function valider() {
+            var name = window.document.formu.name.value;
+             var tel = window.document.formu.tel.value;
+              var lieu = window.document.formu.lieu.value;
+            if (name =="" && tel =="") {
+                alert("veuillez remplir le formulaire");
+            } else{
+                alert("Votre Commande a bien ete valider...");
+                }
+            
+        }
+        
+        
+        
+        </script>
+        <!-- jquery -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <!-- bootstrap js -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <!-- script js -->
+        <script src="js/app.js"></script>
+</body>
+</html>
